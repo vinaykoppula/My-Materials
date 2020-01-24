@@ -1,1 +1,99 @@
+                                        Best Practises for DAO logic development
+Spring Data
+==================
+=>persistent store
+=>Persistent logic/data logic/dao logic
+=>Jdbc,orm,spring data
+=>plain jdbc develope dao logic
+=>spring jdbc,orm,data(spring)
+=>spring data in micro services
+=>spring orm and data(recomended)
+=>number of queries is number of network calls
+=>write sql query to delete dup rows from table
+100 mouse 300.00
+101 keyboard 400.00
+100 mouse 300.00---duplicate rows,
+
+group by pratition data
+=>ram m
+ajay m
+vijay f
+vinay f
+
+decode('m','f','f','f')
+=>pk mandatory orm framworks
+=>Data fix,modify data on production mode on realtime db,when data corupted
+=>Auditing
+=>Rollbacking
+=>Hard fix,jsp file corputed ,then dont deploy the complete project takes more time 4 hrs,deploy jsp 
+
+=>best practises for persistent layer development:
+1)maintain separate component dao/repo
+2)for every table for every dao class(1000 tables 1000 daos),maitainability will inceraed,
+3)every table should contain one pk
+4)pk mandatory orm framworks
+5)use custome generators ,we have 11 predefined generators
+6)indexes,more search opeartion son single coulmn
+7)every table contain 4 colulmns for historcal RD,
+WEEK_STARTDATE
+WEEK_LASTDATE
+Who updated
+when updated
+8)soft delete,make it inactive 
+9)embeded db,for unti testing of dao
+10)lengthy names CUSTOMER_CREDIT_CARD_DETAILS,CSTMR_CRDT_CRD_DTLS
+11)some tables are tarcnastional atbles(modifying) and non transactional tables(non modifying)
+static data get in map object,for 10000 ok but if 1 million rows,then use cache concept(),reduce db interaction for performance,map 
+availbe in jvm ,if it is db network will make
+1st level cahce 
+2 level cahe
+query cache
+redis cache
+distrinuted app,distsributed cahceh machanism
+LRU cahe(realtime used) least used cache,1 million records,which record is not used frequently that will be removed 
+compromise on technologies for performance jdbc,
+dont make db call get it from jvm cahche for non transaction atble,
+
+12)use connection pool to avoid physical connection ,use logical connection
+connectionexashtedprobelm/exception when db dont have connection to give u
+physical connection Connection con=DM.getConnection();,it is open with u until unless u closed it manuallay
+while(rs.next()){
+
+
+}
+after 10 record printing then pick the remaining 10 from db like pagination
+get the connection form pool that is logical connection ,pool manager will manage
+=>hikary connection ,in built ds for boot will maintain the connections
+=>ResultSet will load data 10 rows only OracelDriver we can set limit ,ResultSet fecth size
+=>when from jdbc selct operation get only 10 records for other 10 records will make another db call,db will get all records
+hibernate c3p0 built in connection pool ,boot hikari
+13)use projections(select perticluar query) in select query
+never use *,db will perform lookup which will degare the performance
+14)dynamic insert and dynamic update...
+
+milli sec alos imp,13 micro services calls,every micro services will make db call ,make asycnchronus call ,last year 1600 ms,but we 
+
+use plain jdbc we make it 900 ms,ORM will degrade the performance ,hibernate -HQL-sql,we make it 300 ms using redis cahe
+performacne is imp or technologies is imp,for banking perfomracen is imp...
+
+
+==========================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

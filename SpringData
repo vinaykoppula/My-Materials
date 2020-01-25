@@ -1,7 +1,8 @@
-                                        Best Practises for DAO logic development
 Spring Data
 ==================
 =>persistent store
+                           Best Practises for DAO logic development
+
 =>Persistent logic/data logic/dao logic
 =>Jdbc,orm,spring data
 =>plain jdbc develope dao logic
@@ -76,6 +77,85 @@ milli sec alos imp,13 micro services calls,every micro services will make db cal
 use plain jdbc we make it 900 ms,ORM will degrade the performance ,hibernate -HQL-sql,we make it 300 ms using redis cahe
 performacne is imp or technologies is imp,for banking perfomracen is imp...
 
+
+===================================================================================================
+
+                                SPRING DATA REPOSITORY
+
+=>USER_MASTER Table UserMasterEntity naming 
+=>Entity for Dao ,Model for Data like also there
+=>UserMasterDao(I){
+}
+UserMasterEntity(C)
+TRIGGER_MASTER
+USER_MASTER(T)
+UserMasterDaoImpl
+=>save()
+Update()
+findbyId()
+findAll()
+delete()
+deleteAll()---common operations
+
+common methods for every dao impl classes, so boiler plate code can be maintained in one classs or spring data will wirte the
+logic for these methods ,so we no need to maintain the logic also
+=>UserMaster,RoleMaster,UserRoles ...
+=>UserMaster{
+int userId;
+String fname;
+String lname;
+
+}
+
+USER_MASTER
+
+USER_ID INTEGER,
+FIRST_NAME VARCHAR2(25),
+LAST_NAME VARCHAR2(25)
+
+=>SRING ORM we write the logic also for db operations
+=>use find method stating not get
+=>spring data we use only interface no impl
+=>Spring data abstarction layer on top of orm
+=>Realization(realtionship) interface dao
+=>i want ot talk to the tables with objects
+=>RDMS stroe the data in text format,java represent data in object format,then there is mismatch between java and rdms
+=>impedence mismatch,jdbc deals with text data,orm object,jdbc deont support object format so we go for hibernate
+=>orm covering mismatch between rdms and oops languages...
+=>only hibernate is doing convertion
+=>Object relational mapping
+=>
+
+@Entity
+@Data
+@Table(name="USER_MASTER")
+public class UserMasterEntity{
+
+@Id
+@Column(name="USER_ID")
+public int userId;
+@Column(name="FIRST_NAME")
+private String fname;
+@Column(name="LAST_NAME")
+private String lname;
+
+}
+
+=>Association mapping spring orm,spring data only one table(CRUD operations) for joins go for orm
+=>we can use spring orm and spring data together also...
+=>jdbc get data in resultset after that we have to convert into object manually,orm will do this for us,orm will use hql convertions
+=>Spring data we use repository convention not dao
+=>Spring repository
+
+CrudRepository  responsible for only crud ioperations
+JpaRepository  can do surd and sorting pagination also
+=>simple we have to extend our dao with these repositories
+
+UserMasterDao extends CrudRepository{
+
+}
+=>we need only inteface no impl
+=>public interface CrudRepository<T, ID extends Serializable>
 
 ==========================================================================================================================
 

@@ -1,3 +1,7 @@
+spring refernce doc :
+
+https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-spring-mvc
+
 Spring Data
 ==================
 =>persistent store
@@ -158,6 +162,36 @@ UserMasterDao extends CrudRepository{
 =>public interface CrudRepository<T, ID extends Serializable>
 
 ==========================================================================================================================
+
+HandlerMapper
+  
+
+=>
+@Controller
+@RequestMapping("")
+public class EmployeeController{
+
+@RequestMapping("")
+public void save(){
+
+}
+}
+=>K(path+Http Method),V class+method
+=>404 url/path not found
+=>Http stattus code
+=>Handler Mappings
+SimpleUrlHandlerMapping
+BeanNameUrlHandlerMapping
+HandlerMapping
+HandlerExecutionChain
+=>Get request fecthing data from server,Post request posting data to server
+=>same url with mutiple method
+
+home  get
+home   post
+=>http://localhost:80   http://localhost,http port number 80
+=>@RequestMapping("/"),/ means root folder,home page
+=>local environment,higher environment...
 
 
 

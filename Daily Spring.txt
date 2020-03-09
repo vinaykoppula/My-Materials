@@ -1,7 +1,7 @@
 Debugging
 =>10 % of coding 90% debugging
 =>debugging standalone app,web app,remote app
-=>JSP,Html  we don’t debug but we use developer debugging at browser
+=>JSP,Html  we donâ€™t debug but we use developer debugging at browser
 =>long init=System.currentTime();
 {
 
@@ -10,7 +10,7 @@ Long end=System.currnetTime();
 Sysout(end-init);
 =>soft deleting and hard deleting ,deleting only in my app not in db called soft deleting ,deleting completely from db also called hard deleting,for softdeleting we need streams filters Y concept
 
-=>Server will not available in my machine ,it is available in other machine,I have to connect to the server code(UAT) and debug my code so we go for remote debigging(Remote Java App),but it isn’t so easy,we need access to server and it will degrade the server performance(me and other may work on that),before that do we have that facility in our project or not[Practically code in my machine server is in other laptop],we need logger concept
+=>Server will not available in my machine ,it is available in other machine,I have to connect to the server code(UAT) and debug my code so we go for remote debigging(Remote Java App),but it isnâ€™t so easy,we need access to server and it will degrade the server performance(me and other may work on that),before that do we have that facility in our project or not[Practically code in my machine server is in other laptop],we need logger concept
 
 =>we may enter into jdk code by pressing F5 to get out from jdk code press F7,attach jdk code ,for spring framework no need to attach automatically comes
 =>when we debug web app,app keep on refreshing means it is debugging
@@ -19,15 +19,15 @@ Sysout(end-init);
 =>@Controller+@ResponseBody=@RestCOntroller from spring 4 
 
 Employee e=new Employee();
-=>@RequestMapping(value=”/{name}”,method=RequestMethod.GET,produces=”application/json”)
+=>@RequestMapping(value=â€/{name}â€,method=RequestMethod.GET,produces=â€application/jsonâ€)
 public  @ReponseBody Employee getEmployeeInJson(@PathVarible  String name){
-e.setEname(“Geroge”);
-e.setEaddr(“NewJersy”);
+e.setEname(â€œGerogeâ€);
+e.setEaddr(â€œNewJersyâ€);
 
 }
 ===========================================================================
 =>Version controlling
-=>stroe the code in one central system(Centralized codebase) and monitor the changes—svn
+=>stroe the code in one central system(Centralized codebase) and monitor the changesâ€”svn
 =>other made some changes in the code the my functionalities are not working then I have to know who made changes with deep collaboration
 =>who what when changes 
 =>code integration(storage capacity)+tracking code changes(monitoring access)----svn
@@ -54,16 +54,16 @@ System args:these are applicable for multiple applications,at jvm level,for all 
 =>first these args goes to spring starter app,then we have multiple runner according to those these args are passed for multiple runners
 =>main method is entry point for app
 =>we have only one starter ,conatains main method,we have multiple runners they have only run()
-=>we can pass system args by –Did=123
-=>CommandLineRunner vs ApplicationRunner    run method in ApplicationRunner take ApplicationArguments args as parameter,while in CommandLineRunner run() takes String…args parameter,so we can some fetaures ApplicationArguments args like we can get args name,values,length()
+=>we can pass system args by â€“Did=123
+=>CommandLineRunner vs ApplicationRunner    run method in ApplicationRunner take ApplicationArguments args as parameter,while in CommandLineRunner run() takes Stringâ€¦args parameter,so we can some fetaures ApplicationArguments args like we can get args name,values,length()
 =>==========================================================
 SVN
 
 =>Add-when new file has to be check in to repo,means that file will not be there in repo
 =>mail from TL
-Hi Vinat,welcome to my team…!
+Hi Vinat,welcome to my teamâ€¦!
 Take this URL Repo,checkout code from repo and setup your workspace
-If you any questions please reach me….!
+If you any questions please reach meâ€¦.!
 =>we only perform check out only once ,from there onwards we perform update only
 =>Repo(Code base),Local machine code(Working copy),repo code(Working base)
 =>Only one dev will develop the project first ,then we checkout first
@@ -74,16 +74,16 @@ If you any questions please reach me….!
 =>revision id means id for check in,will incremented 1 automatically.
 =>looking for better code optimized code taking less time and memory
 =>we can revert back to previous revision with revision id
-=>for every change in repo ,one revision number will be created…
+=>for every change in repo ,one revision number will be createdâ€¦
 =>when ever we are commiting code aompare that with repo code then commit
 =>show diff===if code changes in repo then update ,then commit
 =>Update(every day) , check out (only once)
-=>Conflicts problems smith has 10 lines of code and john has done code changes from 11 lines ,then john can update without compare working copy with working base,if john made changes in 5 line then he has to compare,but what if 5 th line was blank john was changing in repo…
+=>Conflicts problems smith has 10 lines of code and john has done code changes from 11 lines ,then john can update without compare working copy with working base,if john made changes in 5 line then he has to compare,but what if 5 th line was blank john was changing in repoâ€¦
 ===============================================================
 =>JVM has 2 memories Meta memory and heap memory,meta meory used to load .class files,heap memory used to hold obj
 =>OutOfMemoryError in jvm means we load unnecessary files into meta memory ,we can handle exceptions but not error
 =>In spring we configure beans,viewresolver,context loader listener,parent container,child container,dispahcer servlet ,not even server not req in boot.
-=>boot we can integrate all modules and work with them easily…
+=>boot we can integrate all modules and work with them easilyâ€¦
 =>no need to take care about configurations
 =>Spring boot parent starter,spring-boot-starter-parent,take care of all the dependency versions,2.2.2 boot will load all necessary child dependencies with the repect to the version 2.2,mysql connector jar,Jackson,jsob b,jax b,joint, will extending the properties form boot starter parent,boot will download which version jar file download them only
 =>version collision problem will be resolved by parent starter
@@ -92,7 +92,7 @@ file:./config/application.properies
 files:./application.properties
 classpath:/config/application.properties   mostly used
 classpth:/application.properties
-=>we get @value(“${eid}”) if it is not there in peiprties file we will get NullPointerException and IllgealArgumentExceptio…
+=>we get @value(â€œ${eid}â€) if it is not there in peiprties file we will get NullPointerException and IllgealArgumentExceptioâ€¦
 =>but in @ConfigurationProperies will not get that will get null
 =>=======================================================
 Actuators
@@ -103,7 +103,7 @@ Actuators
 
 
 =>profiels =env specifc configuartons maintannece
-=>spring conainers,tomcat container,jvm….?
+=>spring conainers,tomcat container,jvmâ€¦.?
 =>db,webservices,log, for every env,deployment process is easy
 
 =>emdedded servers=>tomcat,spring-boot-starter-web,jetty,undertow
@@ -111,7 +111,125 @@ Actuators
 =>normal spring app diff to migrate to spring boot
 =>spring will from scarthc brand new project
 =>Boot app can create in 3 ways1)spring intitalizer2)from sts stater wizard3)cli software
-=>
+================================================================================================================
+=>                      Jenkins Qustions and Batch processing using multithreading...
+ResponseEntity 
+Path vars
+palce holders
+microservices talk---hardcoded to other microservices tallk
+cloud one way of creating micro services...
+project down time
+release team
+
+
+
+
+what is build and deployment process..
+taking code testing build
+
+what is ci and cd?
+who is reposnible for build and deployment in tour currnet project?
+it depends devops/dev,dedicated build team,if microservices arch dev can do,if monolith devops
+
+do you have any idea about scheduled deployments?
+cron expressions/daily weekly monthly half yearly yearly /evaery day 10 am/2pm/10pm
+
+what is on demeand deployment?
+schedlued deployment/on demand i want to deploy my latest code at any time/make req to manager
+
+what is jenkins?
+ci/cd tool which is used to automate build and deployment process
+
+who will create jenkins job in your current project?
+devops send req to devops as part of project create jenkins job use url(github) and project name
+
+what is jenkins pipe line?
+interconnected job/after dev job immendiately run qa job,if dev job fails qa job will fail
+
+how we will know build status?
+40 mins to build and deployment,email notifications,email will send to project team,success or fail
+
+how you will resove build failure?
+jenkins console job loggs can troublesshoot the problem because of compilation problem or unit test fialure
+
+have you ever created jenkins job
+no as dev i dont have the permission to created job
+
+what is deployment process for production?
+we have a releasse team for our project for production deployments in our project they will follow blue/green or A/B deployment process for production.prodcution slave in production for productions we have separate team release team will do on weekends.war is availbe in production and new war will move prod slave then will do routing to production slave then new war will deploy to production server green deployment.release team will going to operate dev qa will observe,dev qa devops leads will involve in release process
+
+what are the challenges faced in current project
+
+what is batch and batch processing ,multi threading as part of batches
+batch:nothing but bulk operations.CO Correspondents send notifications for citizens about plan denied approved elizable.case worker click button to generate pdf.if 1 laks then manually click the button possible...? this has to be done in background.In CO module we have sevral bacthed to generates notices to citizens at night time.
+
+DB----------Java Prog(Batch)-------HP Extension tool to generate pdf
+                            -------EDF             to save pdf
+                            -------Printer       to print
+shell script deploymnet will happen on linex(ksh file)----------to touch this use third party tool opcon  batch shedular commercial tool
+open source sheuling techniques
+
+
+notice process should start at 6 pm,5000 bathces will sheduled in opcon,plan notification sender,batch will have name and frequency
+
+1sec---1pdf(1 thread main thread) as we are calling 3 web services calls and 50 sql query execution db calls,daily 5000 bathces my batch in 1 hrs to print 5laks records...
+design the batch properly with multi threading
+bathc with 50 threads so 1 sec=50pdfs
+change the logic to execute in multiple threads
+parallel processing in jvm
+
+write sql procedure to save 10000 records with unique ids 
+write pdf code using iText api
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
